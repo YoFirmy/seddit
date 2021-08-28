@@ -1,24 +1,33 @@
-# README
+# Seddit
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my attempt at a clone of Reddit. 
 
-Things you may want to cover:
+## Set up
 
-* Ruby version
+Simply fork/clone this repo and run:
+```
+bundle
+```
 
-* System dependencies
+Then to create the tables run:
+```
+rails db:create
 
-* Configuration
+rails db:migrate
+```
 
-* Database creation
+Then you'll be ready to go!
 
-* Database initialization
+## Running server
 
-* How to run the test suite
+To run your local server run:
+```
+rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Running tests
 
-* Deployment instructions
-
-* ...
+To run tests:
+```
+rspec
+```
