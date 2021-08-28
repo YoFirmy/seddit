@@ -9,7 +9,6 @@ RSpec.describe Post, type: :model do
   end
 
   it "is not valid without a message" do
-    post = Post.new(message: nil)
-    expect(post).to_not be_valid
+    expect(subject).to_not be_valid
   end
 end
