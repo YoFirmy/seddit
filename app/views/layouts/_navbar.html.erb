@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
         <% if user_session %>
-          <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link ms-2" %>
+          <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-primary ms-2" %>
         <% else %>
-          <%= button_to "Log In", new_user_session_path, class: "nav-link ms-2" %>
-          <%= button_to "Sign Up", new_user_registration_path, method: :get, class: "nav-link ms-2" %>
+          <%= button_to "Log In", new_user_session_path, class: "btn btn-outline-primary ms-2" %>
+          <%= button_to "Sign Up", new_user_registration_path, method: :get, class: "btn btn-primary ms-2" %>
         <% end %>
       </div>
     </div>
