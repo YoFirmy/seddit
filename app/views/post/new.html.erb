@@ -1,0 +1,7 @@
+<%= form_for :post, url: post_index_path do |f| %>
+  <div class="mb-3">
+    <%= f.label :message, class: "form-label" %>
+    <%= f.text_area :message, class: "form-control", rows: "3" %>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
