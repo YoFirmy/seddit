@@ -24,7 +24,7 @@ RSpec.describe PostController, type: :controller do
 
   context "when user is logged in" do
     before(:each) do
-      sign_in create_user
+      subject.sign_in create_user
     end
 
     describe "GET /new " do
