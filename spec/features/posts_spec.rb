@@ -16,6 +16,6 @@ RSpec.feature "Posts", type: :feature do
   scenario "post includes the username of user who posted" do
     sign_up
     submit_post
-    expect(page).to have_content("submitted by example")
+    expect(page).to have_content("Posted by u/example")
   end
 end
