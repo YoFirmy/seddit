@@ -1,6 +1,9 @@
 <% @posts.reverse_each do |post| %>
   <div class='post'>
-    <p class='post-user'>• Posted by u/<%= post.user.username %></p>
+    <p class='community-name'>
+      <%= link_to "s/#{post.community.name}", community_path(post.community.id) %>
+      <span class='post-user'> • Posted by u/<%= post.user.username %></span>
+    </p>
     <p class='post-message'><%= post.message %></p>
   </div>
 <% end %>

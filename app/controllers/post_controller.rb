@@ -6,6 +6,7 @@ class PostController < ApplicationController
   end
   
   def new
+    @communities = Community.all
     @post = current_user.posts.build
   end
 
@@ -21,6 +22,6 @@ class PostController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :community_id)
   end
 end
