@@ -1,10 +1,17 @@
-s/<%= @community.name %>
-
-<% @community.posts.reverse_each do |post| %>
-  <div class='post'>
-    <p class='community-name'>
-      <span class='post-user'>Posted by <%= link_to "u/#{post.user.username}", "/user/#{post.user.id}", class: "post-username" %></span>
-    </p>
-    <p class='post-message'><%= post.message %></p>
+<div class='community-header'>
+  <div class='community-banner'></div>
+  <div class="container">
+    <h1 class='community-title'><%= @community.name %></h1>
+    <p class='community-header-name'>s/<%= @community.name %></h2>
   </div>
+</div>
+<div class="container">
+  <% @community.posts.reverse_each do |post| %>
+    <div class='post'>
+      <p class='community-name'>
+        <span class='post-user'>Posted by <%= link_to "u/#{post.user.username}", "/user/#{post.user.id}", class: "post-username" %></span>
+      </p>
+      <p class='post-message'><%= post.message %></p>
+    </div>
 <% end %>
+</div>

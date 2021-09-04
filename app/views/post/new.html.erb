@@ -1,12 +1,14 @@
-<%= form_for :post, url: post_index_path do |f| %>
-  <div class="mb-3">
-    <% communities_array = @communities.map { |community| ["s/" + community.name, community.id] } %>
-    <%= f.label :community_id, 'Community', class: "form-label" %>
-    <%= f.select :community_id, communities_array, prompt: "Select a Community", class: "form-control" %>
-  </div>
-  <div class="mb-3">
-    <%= f.label :message, class: "form-label" %>
-    <%= f.text_area :message, class: "form-control", rows: "3" %>
-  </div>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <%= form_for :post, url: post_index_path do |f| %>
+    <div class="mb-3">
+      <% communities_array = @communities.map { |community| ["s/" + community.name, community.id] } %>
+      <%= f.label :community_id, 'Community', class: "form-label" %>
+      <%= f.select :community_id, communities_array, prompt: "Select a Community", class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :message, class: "form-label" %>
+      <%= f.text_area :message, class: "form-control", rows: "3" %>
+    </div>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
