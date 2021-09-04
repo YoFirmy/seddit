@@ -22,3 +22,17 @@ def create_community
   fill_in 'community[name]', with: 'test_community'
   click_button 'Submit'
 end
+
+def create_second_community
+  visit '/communities/new'
+  fill_in 'community[name]', with: 'second_test_community'
+  click_button 'Submit'
+end
+
+def submit_post_to_second_community
+  create_second_community
+  visit '/post/new'
+  select 's/second_test_community', from: 'post[community_id]'
+  fill_in 'post[message]', with: 'Here is a message to the second community'
+  click_button 'Submit'
+end

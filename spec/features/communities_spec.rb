@@ -15,4 +15,21 @@ RSpec.feature 'Communities', type: :feature do
     expect(current_path).to eq('/communities/new')
     expect(page).to have_content('That community already exists.')
   end
+
+  scenario 'show the post posted to that community' do
+    sign_up
+    submit_post
+    click_link 's/test_community'
+    expect(current_path).to match(%r{/communities/\d+})
+    expect(page).to have_content('Here is a message')
+  end
+
+  scenario 'does not show posts to other communities' do
+    sign_up
+    submit_post
+    submit_post_to_second_community
+    click_link 's/test_community'
+    expect(current_path).to match(%r{/communities/\d+})
+    expect(page).not_to have_content('Here is a message to the second community')
+  end
 end
