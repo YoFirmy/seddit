@@ -1,0 +1,30 @@
+require: rubocop-rails
+
+AllCops:
+  NewCops: enable
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/features/posts_spec.rb
+    - config/environments/development.rb
+
+Rails/NotNullColumn:
+  Exclude:
+    - db/migrate/20210830194414_add_community_ref_to_posts.rb
+    - db/migrate/20210829182922_add_user_ref_to_post.rb
+
+Layout/LineLength:
+  Exclude:
+    - config/initializers/devise.rb
+
+Rails/FilePath:
+  Exclude:
+    - config/environments/development.rb
+
+Style/Documentation:
+  Exclude:
+    - config/application.rb
+    - app/models/application_record.rb
+    - app/helpers/registrations_helper.rb
+    - app/helpers/application_helper.rb
+    - app/controllers/registrations_controller.rb

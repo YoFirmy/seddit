@@ -2,7 +2,7 @@
   <div class='post'>
     <p class='community-name'>
       <%= link_to "s/#{post.community.name}", community_path(post.community.id) %>
-      <span class='post-user'> • Posted by u/<%= post.user.username %></span>
+      <span class='post-user'> • Posted by <%= link_to "u/#{post.user.username}", "/user/#{post.user.id}", class: "post-username" %></span>
     </p>
     <p class='post-message'><%= post.message %></p>
   </div>
