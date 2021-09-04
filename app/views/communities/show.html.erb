@@ -1,17 +1,34 @@
 <div class='community-header'>
   <div class='community-banner'></div>
-  <div class="container">
+  <div class='container'>
     <h1 class='community-title'><%= @community.name %></h1>
     <p class='community-header-name'>s/<%= @community.name %></h2>
   </div>
 </div>
-<div class="container">
-  <% @community.posts.reverse_each do |post| %>
-    <div class='post'>
-      <p class='community-name'>
-        <span class='post-user'>Posted by <%= link_to "u/#{post.user.username}", "/user/#{post.user.id}", class: "post-username" %></span>
-      </p>
-      <p class='post-message'><%= post.message %></p>
+<div class='container'>
+  <div class='row'>
+    <div class='posts-container col'>
+      <% @community.posts.reverse_each do |post| %>
+        <div class='post'>
+          <p class='community-name'>
+            <span class='post-user'>Posted by <%= link_to "u/#{post.user.username}", "/user/#{post.user.id}", class: "post-username" %></span>
+          </p>
+          <p class='post-message'><%= post.message %></p>
+        </div>
+      <% end %>
     </div>
-<% end %>
+    <div class='community-right-side container col-lg-4'>
+      <div class='community-about'>
+        <div class='community-about-title-container'>
+          <p class='community-about-title'>About Community</p>
+        </div>
+        <div class='community-about-text-container'>
+          <p class='community-about-text'>Here is some example text. This will eventually be something input by the user probably with a ruby tag</p>
+        </div>
+        <div class='community-members-container'>
+          <p class='community-members'>1 Member</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

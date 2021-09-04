@@ -12,7 +12,7 @@ RSpec.feature 'Communities', type: :feature do
   scenario 'can create a community' do
     sign_up
     create_community
-    expect(current_path).to match(%r{/communities/\d+})
+    expect(current_path).to match('/communities/test_community')
     expect(page).to have_content('s/test_community')
     expect(page).to have_content('Community created successfully.')
   end
@@ -28,16 +28,23 @@ RSpec.feature 'Communities', type: :feature do
     sign_up
     submit_post
     click_link 's/test_community'
-    expect(current_path).to match(%r{/communities/\d+})
+    expect(current_path).to match('/communities/test_community')
     expect(page).to have_content('Here is a message')
   end
 
-  scenario 'does not show posts to other communities' do
+  scenario 'do not show posts to other communities' do
     sign_up
     submit_post
     submit_post_to_second_community
     click_link 's/test_community'
-    expect(current_path).to match(%r{/communities/\d+})
+    expect(current_path).to match('/communities/test_community')
     expect(page).not_to have_content('Here is a message to the second community')
+  end
+
+  scenario 'have the creator as a member' do
+    sign_up
+    create_community
+    expect(current_path).to match('/communities/test_community')
+    expect(page).to have_content('1 Member')
   end
 end

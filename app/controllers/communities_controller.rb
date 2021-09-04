@@ -3,7 +3,7 @@
 # Communities Controller
 class CommunitiesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
-  
+
   def new
     @community = Community.new
   end
@@ -11,14 +11,14 @@ class CommunitiesController < ApplicationController
   def create
     @community = Community.new(community_params)
     if @community.save
-      redirect_to community_path(id: @community.id), notice: 'Community created successfully.'
+      redirect_to community_path(name: @community.name), notice: 'Community created successfully.'
     else
       redirect_to new_community_path, notice: 'That community already exists.'
     end
   end
 
   def show
-    @community = Community.find(params[:id])
+    @community = Community.find_by(name: params[:name])
   end
 
   private
