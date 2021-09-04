@@ -5,7 +5,7 @@ AllCops:
 
 Metrics/BlockLength:
   Exclude:
-    - spec/features/posts_spec.rb
+    - spec/features/*
     - config/environments/development.rb
 
 Rails/NotNullColumn:

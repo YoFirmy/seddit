@@ -2,6 +2,8 @@
 
 # Communities Controller
 class CommunitiesController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create]
+  
   def new
     @community = Community.new
   end

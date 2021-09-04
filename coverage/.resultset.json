@@ -44,6 +44,8 @@
           null,
           1,
           1,
+          null,
+          1,
           11,
           null,
           null,
@@ -76,34 +78,13 @@
           null
         ]
       },
-      "/Users/mkfdrumming/Projects/seddit/app/models/community.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/mkfdrumming/Projects/seddit/app/models/post.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/mkfdrumming/Projects/seddit/app/controllers/registrations_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
-          11,
+          13,
           null,
           null
         ]
@@ -117,7 +98,7 @@
           1,
           null,
           1,
-          21,
+          23,
           null,
           null,
           1,
@@ -145,8 +126,29 @@
           null,
           null
         ]
+      },
+      "/Users/mkfdrumming/Projects/seddit/app/models/post.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mkfdrumming/Projects/seddit/app/models/community.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1630765030
+    "timestamp": 1630768597
   }
 }

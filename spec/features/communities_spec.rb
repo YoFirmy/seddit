@@ -3,7 +3,14 @@
 require 'rails_helper'
 
 RSpec.feature 'Communities', type: :feature do
+  scenario 'can not create a community if have not signed up' do
+    visit '/communities/new'
+    expect(current_path).to eq('/user/sign_in')
+    expect(page).to have_content('You need to sign in or sign up before continuing.')
+  end
+
   scenario 'can create a community' do
+    sign_up
     create_community
     expect(current_path).to match(%r{/communities/\d+})
     expect(page).to have_content('s/test_community')
@@ -11,6 +18,7 @@ RSpec.feature 'Communities', type: :feature do
   end
 
   scenario 'can not create a community with the same name as one that already exists' do
+    sign_up
     2.times { create_community }
     expect(current_path).to eq('/communities/new')
     expect(page).to have_content('That community already exists.')
