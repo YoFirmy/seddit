@@ -47,4 +47,15 @@ RSpec.feature 'Communities', type: :feature do
     expect(current_path).to match('/communities/test_community')
     expect(page).to have_content('1 Member')
   end
+
+  scenario 'members increase as a user joins' do
+    sign_up
+    create_community
+    click_link 'Log Out'
+    sign_up_second_user
+    visit '/communities/test_community'
+    click_link 'Join'
+    expect(current_path).to eq('/communities/test_community')
+    expect(page).to have_content('2 Members')
+  end
 end

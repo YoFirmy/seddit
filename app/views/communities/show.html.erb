@@ -2,6 +2,7 @@
   <div class='community-banner'></div>
   <div class='container'>
     <h1 class='community-title'><%= @community.name %></h1>
+    <%= link_to 'Join', "/community/#{@community.name}/join", method: :patch, class: "btn btn-primary ms-2 community-join" %>
     <p class='community-header-name'>s/<%= @community.name %></h2>
   </div>
 </div>
@@ -26,7 +27,13 @@
           <p class='community-about-text'>Here is some example text. This will eventually be something input by the user probably with a ruby tag</p>
         </div>
         <div class='community-members-container'>
-          <p class='community-members'>1 Member</p>
+          <p class='community-members'>
+          <% if @community.users.count > 1 %>
+            <%= @community.users.count %> Members
+          <% else %>
+            1 Member
+          <% end %>
+          </p>
         </div>
       </div>
     </div>

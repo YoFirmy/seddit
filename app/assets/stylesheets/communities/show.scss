@@ -10,6 +10,7 @@
 .community-title {
   font-size: 35px;
   padding-left: 10px;
+  display: inline;
 }
 
 .community-header-name {
@@ -39,4 +40,10 @@
 .community-members {
   margin: 10px;
   font-weight: 600;
+}
+
+.community-join {
+  display: inline;
+  position: relative;
+  top: -7px;
 }

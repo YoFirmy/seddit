@@ -9,6 +9,15 @@ def sign_up
   click_button 'Sign up'
 end
 
+def sign_up_second_user
+  visit '/user/sign_up'
+  fill_in 'user[username]', with: 'second_example'
+  fill_in 'user[email]', with: 'second@example.com'
+  fill_in 'user[password]', with: 'second'
+  fill_in 'user[password_confirmation]', with: 'second'
+  click_button 'Sign up'
+end
+
 def submit_post
   create_community
   visit '/post/new'

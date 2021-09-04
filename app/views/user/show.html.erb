@@ -1,3 +1,6 @@
 <div class="container">
   <%= @user.username %>
+  <% @user.communities.each do |community| %>
+    <p><%= community.name %></p>
+  <% end %>
 </div>

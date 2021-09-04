@@ -8,6 +8,8 @@
           1,
           1,
           1,
+          1,
+          1,
           null,
           null
         ]
@@ -41,6 +43,9 @@
         "lines": [
           null,
           null,
+          null,
+          1,
+          1,
           1,
           1,
           1,
@@ -60,26 +65,37 @@
           1,
           null,
           1,
-          12,
-          null,
-          null,
-          1,
-          10,
-          10,
-          9,
-          null,
-          1,
-          null,
+          13,
           null,
           null,
           1,
           11,
-          null,
-          null,
-          1,
-          null,
-          1,
+          11,
+          11,
           10,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          14,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          11,
           null,
           null
         ]
@@ -98,7 +114,7 @@
           null,
           1,
           1,
-          14,
+          16,
           null,
           null
         ]
@@ -112,7 +128,7 @@
           1,
           null,
           1,
-          24,
+          27,
           null,
           null,
           1,
@@ -151,8 +167,16 @@
           1,
           null
         ]
+      },
+      "/Users/mkfdrumming/Projects/seddit/app/models/membership.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1630775173
+    "timestamp": 1630790853
   }
 }
