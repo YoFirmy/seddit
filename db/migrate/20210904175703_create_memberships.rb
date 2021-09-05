@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Creates memberships as join table between users and communities
 class CreateMemberships < ActiveRecord::Migration[6.1]
   def change
     create_table :memberships do |t|

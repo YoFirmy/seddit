@@ -36,4 +36,11 @@ RSpec.feature 'Posts', type: :feature do
     click_button 'Submit'
     expect(page).to have_content('Post unsuccessful. Please make sure you have selected a community.')
   end
+
+  scenario 'have 0 votes when created' do
+    sign_up
+    submit_post
+    section = find('.votes')
+    expect(section).to have_content('0')
+  end
 end

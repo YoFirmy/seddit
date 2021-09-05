@@ -3,6 +3,7 @@
 # Communities Controller
 class CommunitiesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
+  before_action :find_community, only: %i[show join leave]
 
   def new
     @community = Community.new
@@ -18,12 +19,9 @@ class CommunitiesController < ApplicationController
     end
   end
 
-  def show
-    @community = Community.find_by(name: params[:name])
-  end
-  
+  def show; end
+
   def join
-    @community = Community.find_by(name: params[:name])
     if @community.users.include?(current_user)
       redirect_to community_path(name: @community.name), notice: "You are already a member of #{@community.name}."
     else
@@ -34,7 +32,6 @@ class CommunitiesController < ApplicationController
   end
 
   def leave
-    @community = Community.find_by(name: params[:name])
     if @community.users.delete(current_user)
       redirect_to community_path(name: @community.name), notice: "Successfully left #{@community.name}."
     else
@@ -43,6 +40,10 @@ class CommunitiesController < ApplicationController
   end
 
   private
+
+  def find_community
+    @community = Community.find_by(name: params[:name])
+  end
 
   def creation_params
     params.require(:community).permit(:name)

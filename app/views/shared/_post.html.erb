@@ -1,0 +1,12 @@
+<div class='post'>
+  <div class='votes-container'>
+    <p class='votes'>0</p>
+  </div>
+  <div class='post-body'>
+    <div class='community-name'>
+      <%= yield %>
+      <span class='post-user'> • Posted by <%= link_to "u/#{post.user.username}", "/user/#{post.user.id}", class: "post-username" %></span>
+    </div>
+    <p class='post-message'><%= post.message %></p>
+  </div>
+</div>

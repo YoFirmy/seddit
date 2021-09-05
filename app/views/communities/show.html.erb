@@ -14,12 +14,7 @@
   <div class='row'>
     <div class='posts-container col'>
       <% @community.posts.reverse_each do |post| %>
-        <div class='post'>
-          <p class='community-name'>
-            <span class='post-user'>Posted by <%= link_to "u/#{post.user.username}", "/user/#{post.user.id}", class: "post-username" %></span>
-          </p>
-          <p class='post-message'><%= post.message %></p>
-        </div>
+        <%= render 'shared/post', post: post %>
       <% end %>
     </div>
     <div class='community-right-side container col-lg-4'>
