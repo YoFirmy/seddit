@@ -2,7 +2,11 @@
   <div class='community-banner'></div>
   <div class='container'>
     <h1 class='community-title'><%= @community.name %></h1>
-    <%= link_to 'Join', "/community/#{@community.name}/join", method: :patch, class: "btn btn-primary ms-2 community-join" %>
+    <% if current_user.communities.include?(@community) %>
+      <%= link_to 'Leave', "/community/#{@community.name}/leave", method: :patch, class: "btn btn-primary ms-2 community-join" %>
+    <% else %>
+      <%= link_to 'Join', "/community/#{@community.name}/join", method: :patch, class: "btn btn-primary ms-2 community-join" %>
+    <% end %>
     <p class='community-header-name'>s/<%= @community.name %></h2>
   </div>
 </div>
@@ -28,10 +32,10 @@
         </div>
         <div class='community-members-container'>
           <p class='community-members'>
-          <% if @community.users.count > 1 %>
-            <%= @community.users.count %> Members
-          <% else %>
+          <% if @community.users.count == 1 %>
             1 Member
+          <% else %>
+            <%= @community.users.count %> Members
           <% end %>
           </p>
         </div>

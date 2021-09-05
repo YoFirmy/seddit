@@ -24,11 +24,21 @@ class CommunitiesController < ApplicationController
   
   def join
     @community = Community.find_by(name: params[:name])
-    @community.users << current_user
-    if @community.save
-      redirect_to community_path(name: @community.name), notice: 'Successfully joined community.'
+    if @community.users.include?(current_user)
+      redirect_to community_path(name: @community.name), notice: "You are already a member of #{@community.name}."
     else
-      redirect_to root_path, notice: 'Unable to join community.'
+      @community.users << current_user
+      @community.save
+      redirect_to community_path(name: @community.name), notice: "Successfully joined #{@community.name}."
+    end
+  end
+
+  def leave
+    @community = Community.find_by(name: params[:name])
+    if @community.users.delete(current_user)
+      redirect_to community_path(name: @community.name), notice: "Successfully left #{@community.name}."
+    else
+      redirect_to community_path(name: @community.name), notice: "Looks like you aren't a member of #{@community.name}."
     end
   end
 

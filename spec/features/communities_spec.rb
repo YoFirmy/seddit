@@ -58,4 +58,12 @@ RSpec.feature 'Communities', type: :feature do
     expect(current_path).to eq('/communities/test_community')
     expect(page).to have_content('2 Members')
   end
+
+  scenario 'can be left by a member' do
+    sign_up
+    create_community
+    click_link 'Leave'
+    expect(current_path).to match('/communities/test_community')
+    expect(page).to have_content('0 Members')
+  end
 end
